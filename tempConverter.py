@@ -2,7 +2,7 @@ import toga
 from toga.style.pack import COLUMN, LEFT, RIGHT, ROW, Pack
 
 
-def build(app):
+def build(app): # type: ignore
     c_box = toga.Box()
     f_box = toga.Box()
     box = toga.Box()
@@ -47,8 +47,14 @@ def build(app):
 
     return box
 
+
 def main():
-    return toga.App("Temperature Converter","org.beeware.toga.examples.tutorial", startup=build)
+    return toga.App(
+        "Temperature Converter",
+        "org.beeware.toga.examples.tutorial",
+        startup=build,
+    )
+
 
 if __name__ == "__main__":
     main().main_loop()
